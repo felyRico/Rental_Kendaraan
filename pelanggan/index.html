@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pelanggan | Rental</title><link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Rental Kendaraan</a>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="/kendaraan/">Kendaraan</a><a href="/pelanggan/" aria-current="page">Pelanggan</a><a href="/transaksi/">Transaksi</a>
+    </nav>
+  </header>
+  <main class="container">
+    <header class="page-heading"><h1>Pelanggan</h1></header>
+    <section class="panel">
+      <div class="panel-heading"><p id="status" data-state="neutral">Memuat data...</p><div class="list-controls"><input id="search" type="search" placeholder="Cari pelanggan" aria-label="Cari pelanggan"><label class="sort-control"><span>Urutkan</span><select id="sort-by" aria-label="Urutkan pelanggan"><option value="id_pelanggan">ID</option><option value="no_hp">Nomor HP</option><option value="no_ktp">Nomor KTP</option></select></label><button id="sort-direction" type="button" aria-label="Urutkan naik" title="Urutkan naik">↑</button><button id="refresh" type="button">Muat ulang</button><button id="add" type="button" aria-label="Tambah pelanggan" title="Tambah pelanggan">+</button></div></div>
+      <div class="table-wrap"><table class="customer-table"><thead><tr><th>ID</th><th>Nomor HP</th><th>Nomor KTP</th><th>Aksi</th></tr></thead><tbody id="rows"></tbody></table></div>
+    </section>
+  </main>
+  <dialog id="editor"><form id="form"><div class="dialog-heading"><h2 id="dialog-title">Tambah pelanggan</h2><button id="close" type="button" aria-label="Tutup">×</button></div><input id="id" type="hidden"><div class="dialog-fields"><label>Nomor HP<input id="no-hp" type="tel" autocomplete="tel" required></label><label>Nomor KTP<input id="no-ktp" type="text" inputmode="numeric" autocomplete="off" required></label></div><div class="dialog-actions"><button id="cancel" class="secondary" type="button">Batal</button><button id="save" type="submit">Simpan</button></div></form></dialog>
+  <script src="script.js"></script>
+</body>
+</html>

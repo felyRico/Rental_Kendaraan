@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transaksi | Rental</title><link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Rental Kendaraan</a>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="/kendaraan/">Kendaraan</a><a href="/pelanggan/">Pelanggan</a><a href="/transaksi/" aria-current="page">Transaksi</a>
+    </nav>
+  </header>
+  <main class="container">
+    <header class="page-heading"><h1>Transaksi</h1></header>
+    <section class="panel">
+      <div class="panel-heading"><p id="status" data-state="neutral">Memuat data...</p><div class="list-controls"><input id="search" type="search" placeholder="Cari transaksi" aria-label="Cari transaksi"><label class="sort-control"><span>Urutkan</span><select id="sort-by" aria-label="Urutkan transaksi"><option value="id_transaksi">ID transaksi</option><option value="id_kendaraan">ID kendaraan</option><option value="id_pelanggan">ID pelanggan</option><option value="tanggal_sewa">Tanggal sewa</option><option value="tanggal_kembali">Tanggal kembali</option><option value="lama_sewa">Lama sewa</option><option value="total_bayar">Total bayar</option><option value="status_transaksi">Status</option></select></label><button id="sort-direction" type="button" aria-label="Urutkan naik" title="Urutkan naik">↑</button><button id="refresh" type="button">Muat ulang</button><button id="add" type="button" aria-label="Tambah transaksi" title="Tambah transaksi">+</button></div></div>
+      <div class="table-wrap"><table class="transaction-table"><thead><tr><th>ID transaksi</th><th>ID kendaraan</th><th>ID pelanggan</th><th>Tanggal sewa</th><th>Tanggal kembali</th><th>Lama sewa</th><th>Total bayar</th><th>Status transaksi</th><th>Aksi</th></tr></thead><tbody id="rows"></tbody></table></div>
+    </section>
+  </main>
+  <dialog id="editor"><form id="form"><div class="dialog-heading"><h2 id="dialog-title">Tambah transaksi</h2><button id="close" type="button" aria-label="Tutup">×</button></div><input id="id" type="hidden"><div class="dialog-fields"><label>ID pelanggan<select id="pelanggan" required></select></label><label>ID kendaraan<select id="kendaraan" required></select></label><label>Tanggal sewa<input id="mulai" type="date" required></label><label>Tanggal kembali<input id="kembali" type="date" required></label><label>Lama sewa<input id="lama-sewa" type="number" readonly></label><label>Total bayar<input id="biaya" type="number" min="0" step="1" required></label><label>Status transaksi<select id="status-transaksi"><option>Berlangsung</option><option>Selesai</option><option>Dibatalkan</option></select></label></div><div class="dialog-actions"><button id="cancel" class="secondary" type="button">Batal</button><button id="save" type="submit">Simpan</button></div></form></dialog>
+  <script src="script.js"></script>
+</body>
+</html>

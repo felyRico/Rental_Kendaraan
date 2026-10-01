@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kendaraan | Rental</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Rental Kendaraan</a>
+    <nav class="site-nav" aria-label="Navigasi utama">
+      <a href="/kendaraan/" aria-current="page">Kendaraan</a>
+      <a href="/pelanggan/">Pelanggan</a>
+      <a href="/transaksi/">Transaksi</a>
+    </nav>
+  </header>
+  <main class="container">
+    <header class="page-heading"><h1>Kendaraan</h1></header>
+    <section class="panel">
+      <div class="panel-heading">
+        <p id="status" data-state="neutral">Memuat data...</p>
+        <div class="list-controls">
+          <input id="search-vehicles" type="search" placeholder="Cari kendaraan" aria-label="Cari kendaraan">
+          <label class="sort-control"><span>Urutkan</span>
+            <select id="sort-by" aria-label="Urutkan kendaraan">
+              <option value="nama_kendaraan">Nama</option><option value="jenis">Jenis</option>
+              <option value="plat_nomor">Plat nomor</option><option value="harga_sewa_per_hari">Harga</option>
+              <option value="status">Status</option>
+            </select>
+          </label>
+          <button id="sort-direction" type="button" aria-label="Urutkan naik" title="Urutkan naik">↑</button>
+          <button id="refresh" type="button">Muat ulang</button>
+          <button id="add-vehicle" type="button" aria-label="Tambah kendaraan" title="Tambah kendaraan">+</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Nama</th><th>Jenis</th><th>Plat nomor</th><th>Harga/hari</th><th>Status</th><th>Aksi</th></tr></thead>
+          <tbody id="vehicles"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <dialog id="vehicle-dialog">
+    <form id="vehicle-form">
+      <div class="dialog-heading"><h2 id="dialog-title">Tambah kendaraan</h2><button id="close-dialog" type="button" aria-label="Tutup">×</button></div>
+      <input type="hidden" id="vehicle-id">
+      <div class="dialog-fields">
+        <label>Nama kendaraan<input id="nama-kendaraan" type="text" required></label>
+        <label>Jenis<select id="jenis-kendaraan"><option>Mobil</option><option>Motor</option></select></label>
+        <label>Plat nomor<input id="plat-kendaraan" type="text" required></label>
+        <label>Harga per hari<input id="harga-kendaraan" type="number" min="1" step="1" inputmode="numeric" required></label>
+        <label>Status<select id="status-kendaraan"><option>Tersedia</option><option>Disewa</option><option>Maintenance</option></select></label>
+      </div>
+      <div class="dialog-actions"><button id="cancel-edit" class="secondary" type="button">Batal</button><button id="save-vehicle" type="submit">Simpan</button></div>
+    </form>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
