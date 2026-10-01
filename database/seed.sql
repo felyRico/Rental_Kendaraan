@@ -1,6 +1,5 @@
 USE rental_kendaraan;
 
--- Sample rows for a fresh database. Existing IDs are left unchanged.
 INSERT IGNORE INTO kendaraan
   (id_kendaraan, nama_kendaraan, jenis, plat_nomor, harga_sewa_per_hari, status)
 VALUES
